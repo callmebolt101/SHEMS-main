@@ -1,0 +1,69 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f7;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 3em;
+}
+
+.btn-home {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff; /* Adjust the color to fit your design */
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px; /* Space between buttons */
+}
+
+.btn-home:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+.menu {
+  display: flex;
+  gap: 1em;
+}
+
+.btn-login,
+.btn-demo,
+.btn-header-demo {
+  padding: 0.5em 1em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+.btn-demo {
+  background-color: yellow;
+}
+
+.btn-header-demo {
+  margin-top: 1em;
+  background-color: red;
+  color: white;
+}
+
+.header {
+  text-align: center;
+  max-width: 60%;
+}
+
+.header-content h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}

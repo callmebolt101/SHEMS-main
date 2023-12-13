@@ -1,0 +1,47 @@
+.dashboard {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f4f7;
+    padding: 20px;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .customer-details,
+  .devices-list,
+  .service-locations {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .view-details-btn {
+    grid-column: 1 / -1; /* Span across all columns */
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add additional styles as needed */
+  

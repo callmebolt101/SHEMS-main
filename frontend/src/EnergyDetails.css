@@ -1,0 +1,51 @@
+.energy-details {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  .energy-details-header {
+    background: #007bff;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .energy-details-content {
+    padding: 20px;
+  }
+  
+  .chart {
+    background: #f5f5f5;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .stat-item {
+    background: #e9ecef;
+    padding: 10px;
+    border-radius: 8px;
+    width: 150px;
+    text-align: center;
+  }
+  
+  .dashboard-button {
+    background: #28a745;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .dashboard-button:hover {
+    background: #218838;
+  }
+  
