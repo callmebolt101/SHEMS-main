@@ -1,0 +1,1 @@
+## This Project involves the backend and frontend of our database project
