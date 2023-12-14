@@ -13,7 +13,7 @@ const LoginPage = () => {
     setError(''); // Reset error message on new login attempt
 
     try {
-      const response = await fetch('http://localhost:8080/login', { // Adjust the URL to your backend
+      const response = await fetch('http://localhost:8080/users/login_users', { // Adjust the URL to your backend
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

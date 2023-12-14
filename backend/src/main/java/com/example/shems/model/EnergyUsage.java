@@ -25,6 +25,10 @@ public class EnergyUsage {
     @Column(name = "EnergyConsumed", precision = 10, scale = 2)
     private BigDecimal energyConsumed;
 
+    @ManyToOne
+    @JoinColumn(name = "DeviceID", referencedColumnName = "deviceId", insertable = false, updatable = false)
+    private Device device;
+
     // Getters
     public Integer getUsageId() {
         return usageId;

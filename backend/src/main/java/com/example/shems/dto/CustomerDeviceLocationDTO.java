@@ -1,5 +1,8 @@
 package com.example.shems.dto;
 
+import java.math.BigDecimal;
+import java.sql.Date;
+
 public class CustomerDeviceLocationDTO {
 
     private Integer customerId;
@@ -14,16 +17,21 @@ public class CustomerDeviceLocationDTO {
     private String address;
     private String zipCode;
     private Integer squareFootage;
+    private BigDecimal totalEnergyConsumedByDevice;
+    private BigDecimal totalEnergyConsumedAllDevices;
+
 
     // Default constructor
     public CustomerDeviceLocationDTO() {
     }
 
-    // Constructor with all fields
+    // Constructor with all fields, including energy usage data
     public CustomerDeviceLocationDTO(Integer customerId, String firstName, String lastName, 
                                      Integer deviceId, String type, String model, 
                                      String manufacturer, String status, Integer locationId, 
-                                     String address, String zipCode, Integer squareFootage) {
+                                     String address, String zipCode, Integer squareFootage,
+                                     BigDecimal totalEnergyConsumedByDevice, BigDecimal totalEnergyConsumedAllDevices
+                                     ) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -36,107 +44,124 @@ public class CustomerDeviceLocationDTO {
         this.address = address;
         this.zipCode = zipCode;
         this.squareFootage = squareFootage;
+        this.totalEnergyConsumedByDevice = totalEnergyConsumedByDevice;
+        this.totalEnergyConsumedAllDevices = totalEnergyConsumedAllDevices;
     }
 
-    // Getters and setters
-
+    // Getters
     public Integer getCustomerId() {
         return customerId;
-    }
-
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public Integer getDeviceId() {
         return deviceId;
     }
 
-    public void setDeviceId(Integer deviceId) {
-        this.deviceId = deviceId;
-    }
-
     public String getType() {
         return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String getModel() {
         return model;
     }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
-
     public String getManufacturer() {
         return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public Integer getLocationId() {
         return locationId;
-    }
-
-    public void setLocationId(Integer locationId) {
-        this.locationId = locationId;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getZipCode() {
         return zipCode;
-    }
-
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
     }
 
     public Integer getSquareFootage() {
         return squareFootage;
     }
 
+    public BigDecimal getTotalEnergyConsumedByDevice() {
+        return totalEnergyConsumedByDevice;
+    }
+
+    public void setTotalEnergyConsumedByDevice(BigDecimal totalEnergyConsumedByDevice) {
+        this.totalEnergyConsumedByDevice = totalEnergyConsumedByDevice;
+    }
+
+    // Setters
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setDeviceId(Integer deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setLocationId(Integer locationId) {
+        this.locationId = locationId;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
     public void setSquareFootage(Integer squareFootage) {
         this.squareFootage = squareFootage;
     }
 
-    // Optional: Override toString() for easy logging or debugging
+    public BigDecimal getTotalEnergyConsumedAllDevices() {
+        return totalEnergyConsumedAllDevices;
+    }
+
+    public void setTotalEnergyConsumedAllDevices(BigDecimal totalEnergyConsumedAllDevices) {
+        this.totalEnergyConsumedAllDevices = totalEnergyConsumedAllDevices;
+    }
+
 
     @Override
     public String toString() {
@@ -153,7 +178,8 @@ public class CustomerDeviceLocationDTO {
                ", address='" + address + '\'' +
                ", zipCode='" + zipCode + '\'' +
                ", squareFootage=" + squareFootage +
+               ", totalEnergyConsumedByDevice=" + totalEnergyConsumedByDevice +
+               ", totalEnergyConsumedAllDevices=" + totalEnergyConsumedAllDevices +
                '}';
     }
 }
-

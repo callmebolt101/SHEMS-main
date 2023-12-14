@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.sql.Date;
 import java.util.List;
 
 @RestController
@@ -23,7 +25,15 @@ public class CustomerController {
 
      @GetMapping("/{customerId}/devices-locations")
     public ResponseEntity<List<CustomerDeviceLocationDTO>> getCustomerDevicesAndLocations(@PathVariable Integer customerId) {
-        List<CustomerDeviceLocationDTO> data = customerService.getCustomerDevicesAndLocations(customerId);
+        LocalDate endDateLocal = LocalDate.now();
+
+    // Start date 30 days before
+        LocalDate startDateLocal = endDateLocal.minusDays(30);
+
+// Convert to java.sql.Date
+        Date startDate = Date.valueOf(startDateLocal);
+        Date endDate = Date.valueOf(endDateLocal);  
+        List<CustomerDeviceLocationDTO> data = customerService.getCustomerDevicesAndLocations(customerId, startDate, endDate);
         if (data.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
@@ -42,6 +52,7 @@ public class CustomerController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
+
 
     @PostMapping
     public Customer createCustomer(@RequestBody Customer customer) {

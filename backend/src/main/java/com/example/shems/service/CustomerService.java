@@ -7,6 +7,7 @@ import com.example.shems.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,10 +20,10 @@ public class CustomerService {
     @Autowired
     private CustomerDeviceLocationRepository repository;
 
-    public List<CustomerDeviceLocationDTO> getCustomerDevicesAndLocations(Integer customerId) {
-        return repository.findCustomerDevicesAndLocations(customerId);
+    public List<CustomerDeviceLocationDTO> getCustomerDevicesAndLocations(Integer customerId, Date startDate, Date endDate) {
+        return repository.findCustomerDevicesAndLocations(customerId, startDate, endDate);
     }
-    
+
     // Get all customers
     public List<Customer> findAll() {
         return customerRepository.findAll();

@@ -41,7 +41,7 @@ public class UserController {
 
 
     // Endpoint for user login
-    @PostMapping("/login")
+    @PostMapping("/login_user")
     public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) {
         User user = userService.authenticateUser(loginRequest.getUsername(), loginRequest.getPassword());
         if (user != null) {

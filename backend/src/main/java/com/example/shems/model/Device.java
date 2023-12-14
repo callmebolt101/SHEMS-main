@@ -1,5 +1,9 @@
 package com.example.shems.model;
 
+import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -12,6 +16,7 @@ public class Device {
 
     @ManyToOne
     @JoinColumn(name = "CustomerID", referencedColumnName = "CustomerID")
+    @JsonIgnore
     private Customer customer;
 
     @ManyToOne
@@ -29,6 +34,9 @@ public class Device {
 
     @Column(name = "Status", length = 50)
     private String status;
+
+    @OneToMany(mappedBy = "device")
+    private Set<EnergyUsage> energyUsages;
 
     // Getters and Setters
 
